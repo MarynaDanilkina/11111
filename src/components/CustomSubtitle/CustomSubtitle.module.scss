@@ -1,0 +1,23 @@
+.root {
+  margin: 0;
+
+  font-weight: 500;
+
+  color: $text-primary-inv;
+
+  &.s1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &.s2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    @include media-max($md) {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+}

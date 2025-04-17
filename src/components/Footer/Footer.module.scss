@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 81px;
+
+  padding: 80px 0 16px 0;
+
+  border-top: 1px solid #303655; //Заменить цвет на константы
+
+  @include media-max($md) {
+    gap: 60px;
+
+    padding-top: 0;
+    padding-bottom: 5px;
+
+    border: none;
+  }
+}
+
+.topWrapper {
+  display: grid;
+  grid-template-areas: "socials payment" "nav payment";
+  grid-row-gap: 24px;
+
+  @include media-max($md) {
+    grid-template-areas: "socials" "payment" "nav";
+    grid-column-gap: 60px;
+    grid-row-gap: 60px;
+  }
+}
+
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media-max($lg) {
+    flex-direction: column-reverse;
+    gap: 36px;
+  }
+}
+
+.linksWrapper {
+  display: flex;
+  gap: 24px;
+
+  @include media-max($md) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  & .link {
+    font-size: 12px;
+    line-height: 18px;
+
+    @include media-max($md) {
+      text-align: center;
+    }
+  }
+}

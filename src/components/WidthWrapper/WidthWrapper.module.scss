@@ -1,0 +1,9 @@
+.root {
+  max-width: 1176px;
+  width: 100%;
+
+  @include media-max(1176px - 0.2) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}

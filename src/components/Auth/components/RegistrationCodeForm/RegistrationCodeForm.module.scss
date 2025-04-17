@@ -1,0 +1,34 @@
+.root {
+  height: 100%;
+
+  padding: 0 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+
+  @include media-max($md) {
+    padding: 0 24px 110px 24px;
+
+    justify-content: center;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wrapperContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.colorBtn {
+  color: #ffffff !important;
+}

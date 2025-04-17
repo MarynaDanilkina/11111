@@ -1,0 +1,56 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 29.6px 28px;
+  justify-content: center;
+  justify-items: center;
+
+  @include media-max($md) {
+    grid-template-columns: repeat(auto-fit, minmax(66px, 1fr));
+    gap: 16px 20px;
+  }
+
+  & .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    width: 80px;
+    height: 108px;
+
+    @include media-max($md) {
+      width: 66px;
+      height: 90px;
+    }
+
+    &:last-child {
+      margin-right: auto;
+    }
+
+    & .title {
+      max-width: 80px;
+
+      text-align: center;
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      @include media-max($md) {
+        max-width: 66px;
+
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .img {
+    @include media-max($md) {
+      width: 66px;
+      height: 66px;
+    }
+  }
+}

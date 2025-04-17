@@ -1,0 +1,31 @@
+.root {
+  padding: 0 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  overflow-y: auto;
+
+  @include media-max($md) {
+    padding: 0 24px 60px 24px;
+
+    gap: 80px;
+  }
+}
+
+.wrapperCustomTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.forgotPassword {
+  width: fit-content;
+
+  padding: 0;
+
+  align-self: center;
+
+  background: none;
+}

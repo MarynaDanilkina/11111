@@ -1,0 +1,100 @@
+.root {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+
+  max-width: 376px;
+  width: 100%;
+  max-height: 280px;
+  height: 100%;
+
+  padding: 56px 36px 28px 36px;
+
+  border-radius: 24px;
+
+  background: #2a3c76;
+  backdrop-filter: blur(400px);
+
+  @include media-max($md) {
+    align-items: flex-start;
+    gap: 8px;
+
+    max-width: 280px;
+    max-height: 216px;
+
+    padding: 52px 24px 16px 24px;
+  }
+
+  & .title,
+  .pharagraph {
+    color: $text-primary;
+
+    z-index: 2;
+  }
+
+  & .pharagraph {
+    text-align: end;
+
+    @include media-max($md) {
+      text-align: start;
+    }
+  }
+
+  & .btn {
+    height: 44px;
+
+    margin-top: 22px;
+
+    @include media-max($md) {
+      justify-content: center;
+
+      width: 100%;
+    }
+  }
+}
+
+.youtubeSlideIcon {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+
+  width: 116px;
+  height: 111px;
+
+  z-index: 1;
+
+  @include media-max($md) {
+    top: 28px;
+    right: 23px;
+    left: unset;
+
+    width: 63px;
+    height: 59px;
+
+    transform: rotate(32deg);
+  }
+}
+
+.crumbsSlideIcon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 301px;
+  height: 186px;
+
+  @include media-max($md) {
+    top: 0;
+    right: 0;
+    bottom: unset;
+    left: unset;
+
+    width: 220px;
+    height: 115px;
+
+    transform: rotate(180deg);
+  }
+}

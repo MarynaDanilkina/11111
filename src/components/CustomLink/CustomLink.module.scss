@@ -1,0 +1,93 @@
+.root {
+  border-radius: 40px;
+
+  font-weight: 500;
+
+  color: #eef1ff; //Перенести в константы
+
+  text-decoration: none;
+
+  &.primary {
+    padding: 8px 20px;
+
+    background: $buttons-primary-default;
+
+    font-weight: 500;
+
+    color: $text-primary-inv;
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      background: $buttons-primary-hover;
+    }
+
+    &:active {
+      background: $buttons-primary-clicked;
+    }
+
+    &:disabled {
+      background: $buttons-primary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.secondary {
+    padding: 8px 20px;
+
+    background: $buttons-secondary-default;
+
+    font-weight: 500;
+
+    color: $text-primary-inv;
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:hover {
+      background: $buttons-secondary-hover;
+    }
+
+    &:active {
+      background: $buttons-secondary-clicked;
+    }
+
+    &:disabled {
+      background: $buttons-secondary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.underlineLink {
+    color: $buttons-primary-default;
+
+    text-decoration: underline;
+
+    &:hover {
+      color: $buttons-primary-hover;
+    }
+
+    &:active {
+      color: $buttons-primary-clicked;
+    }
+
+    &:disabled {
+      color: $buttons-primary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+}

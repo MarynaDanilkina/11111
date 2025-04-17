@@ -1,0 +1,81 @@
+.root {
+  margin: 0;
+
+  color: $text-base-first;
+
+  &.b1 {
+    font-size: 18px;
+    line-height: 28px;
+
+    @include media-max($md) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &.b2 {
+    font-size: 16px;
+    line-height: 24px;
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &.b3 {
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media-max($md) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &.b4 {
+    font-size: 12px;
+    line-height: 16px;
+
+    @include media-max($md) {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &.b5 {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+
+    @include media-max($md) {
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 16px;
+    }
+  }
+
+  &.b6 {
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  &.b7 { //for cloudFlare
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 11px;
+  }
+
+  &.b1Bunner {
+    font-weight: 400;
+
+    color: $text-primary-inv;
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+services:
+  frontend:
+    image: $TAG_LATEST
+    container_name: nb-frontend
+    env_file:
+      - ./.env.local
+    environment:
+      - VIRTUAL_HOST=nixbuy.com
+      - VIRTUAL_PORT=3000
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true

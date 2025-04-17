@@ -1,0 +1,125 @@
+.wrapperDropdown {
+  position: relative;
+
+  border-radius: 40px;
+  border: 1px solid $extra-border;
+
+  z-index: 2;
+}
+
+.button {
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+  border: none;
+  border-radius: 40px;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.wrapperDropdownListNotification {
+  position: absolute;
+
+  top: 49px;
+  right: 0;
+  
+  max-height: 400px;
+  max-width: 340px;
+  
+  height: fit-content;
+  width: 340px;
+  
+  padding: 16px;
+
+  border-radius: 16px;
+  border: 1px solid $extra-border;
+  background: $bg-note;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    margin: 20px;
+  }
+}
+
+.dropdownListNotification {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wrapperItemNotification {
+  padding: 4px 8px;
+
+  display: flex;
+  gap: 8px;
+
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 8px;
+    background: $text-tertiary;
+  }
+}
+
+.wrapperItemContent {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wrapperItemUserContent {
+  width: 100%;
+
+  display: flex;
+  gap: 12px;
+}
+
+.greenCircle {
+  min-width: 6px;
+  height: 6px;
+
+  margin-top: 6px;
+
+  border-radius: 100%;
+  background-color: $extra-success;
+}
+
+.greenCircleMain {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.greenCircleForUser {
+  min-width: 6px;
+  height: 6px;
+
+  margin-top: 15px;
+
+  border-radius: 100%;
+  background-color: $extra-success;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.textWithoutItems {
+  margin-bottom: 21px !important;
+}

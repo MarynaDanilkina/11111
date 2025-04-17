@@ -1,0 +1,83 @@
+.root {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  max-width: 376px;
+  width: 100%;
+  max-height: 280px;
+  height: 100%;
+
+  padding: 56px 87px 96px 36px;
+
+  border-radius: 24px;
+
+  background: $extra-fiol;
+
+  @include media-max($md) {
+    gap: 8px;
+
+    max-width: 280px;
+    max-height: 216px;
+
+    padding: 52px 24px 16px 24px;
+  }
+
+  & .btn {
+    display: none;
+
+    @include media-max($md) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 44px;
+
+      margin-top: 20px;
+    }
+  }
+}
+
+.telegramIcon {
+  position: absolute;
+  top: 40px;
+  right: 36px;
+
+  width: 83px;
+  height: 68px;
+
+  @include media-max($md) {
+    top: 17px;
+    right: 24px;
+
+    width: 49px;
+    height: 40px;
+  }
+}
+
+.roundedLinesIcon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 186px;
+  height: 64px;
+
+  @include media-max($md) {
+    display: none;
+  }
+}
+
+.roundedLinesMobileIcon {
+  display: none;
+
+  @include media-max($md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+  }
+}

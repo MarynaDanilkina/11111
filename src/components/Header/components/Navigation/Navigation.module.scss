@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 150px;
+  width: 100%;
+
+  @include media-max($md) {
+    display: none;
+  }
+}

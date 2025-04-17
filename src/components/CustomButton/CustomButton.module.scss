@@ -1,0 +1,207 @@
+.root {
+  display: flex;
+  align-items: center;
+
+  border-radius: 40px;
+  border: none;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  &.primary {
+    padding: 8px 20px;
+
+    background: $buttons-primary-default;
+
+    font-weight: 500;
+
+    &:hover {
+      background: $buttons-primary-hover;
+    }
+
+    &:active {
+      background: $buttons-primary-clicked;
+    }
+
+    &:disabled {
+      background: $buttons-primary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &.secondary {
+    padding: 8px 20px;
+
+    background: $buttons-secondary-default;
+
+    font-weight: 500;
+
+    &:hover {
+      background: $buttons-secondary-hover;
+    }
+
+    &:active {
+      background: $buttons-secondary-clicked;
+    }
+
+    &:disabled {
+      background: $buttons-secondary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.tertiary {
+    padding: 10px 20px;
+
+    background: $buttons-tertiary-default;
+
+    font-weight: 500;
+
+    &:hover {
+      background: $buttons-tertiary-hover;
+    }
+
+    &:active {
+      background: $buttons-tertiary-clicked;
+    }
+
+    &:disabled {
+      background: $buttons-tertiary-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.outline {
+    padding: 10px 20px;
+
+    border: 1px solid $buttons-outline-default;
+
+    background: none;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $buttons-outline-default;
+
+    &:hover {
+      border-color: $buttons-outline-hover;
+
+      background: $buttons-outline-hover;
+
+      color: $text-primary-inv;
+    }
+
+    &:active {
+      border-color: $buttons-outline-clicked;
+
+      background: $buttons-outline-clicked;
+    }
+
+    &:disabled {
+      border-color: $buttons-outline-disabled;
+
+      color: $buttons-outline-disabled;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.outline2 {
+    padding: 10px 20px;
+
+    border: 1px solid $buttons-outline-2-default;
+
+    background: none;
+
+    font-weight: 500;
+
+    color: $text-primary;
+
+    &:hover {
+      border-color: $buttons-outline-2-hover;
+
+      background: $buttons-outline-2-hover;
+
+      color: $text-primary-inv;
+    }
+
+    &:active {
+      border-color: $buttons-outline-2-clicked;
+
+      background: $buttons-outline-2-clicked;
+
+      color: $text-primary-inv;
+    }
+
+    &:disabled {
+      border-color: $buttons-outline-2-disabled;
+
+      color: $text-tertiary;
+
+      cursor: default;
+
+      pointer-events: none;
+    }
+  }
+
+  &.bunner {
+    padding: 10px 20px;
+
+    background: $bg-background;
+
+    font-weight: 500;
+
+    color: $text-primary;
+
+    &:hover {
+      background: #020b41;
+    }
+
+    &:active {
+      background: #01051e;
+    }
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &.withoutStyles {
+    background: transparent;
+  }
+
+  &.imageOutline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 100%;
+    border: 1px solid $extra-border;
+
+    background: none;
+  }
+}

@@ -1,0 +1,75 @@
+.root {
+  position: relative;
+
+  width: fit-content;
+}
+
+.input {
+  display: none;
+
+  &:checked + .label::before {
+    background-image: url("../../assets/img/Checkbox.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    &::before {
+      border-color: $extra-success;
+    }
+  }
+
+  &:active {
+    &::before {
+      border-color: $extra-success;
+    }
+  }
+
+  &::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    border: 1px solid $border-disable;
+    background: $bg-disable;
+    border-radius: 4px;
+  }
+}
+
+.disabled {
+  color: $bg-disable;
+
+  cursor: default;
+
+  &:hover,
+  &:active {
+    color: $bg-disable;
+
+    &::before {
+      border-color: $bg-disable;
+    }
+  }
+
+  &::before {
+    background: $bg-disable !important;
+
+    border-color: $bg-disable !important;
+  }
+}
+
+.colorWhite {
+  color: $text-primary !important;
+
+  &.isDisabled {
+    color: $text-disable !important;
+  }
+}

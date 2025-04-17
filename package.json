@@ -1,0 +1,44 @@
+{
+  "name": "frontendreact",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0",
+    "lint": "next lint",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.6.0",
+    "@vkid/sdk": "^2.5.2",
+    "axios": "^1.7.9",
+    "classnames": "^2.5.1",
+    "formik": "^2.4.6",
+    "jwt-decode": "^4.0.0",
+    "nanoid": "^5.1.0",
+    "next": "15.1.7",
+    "normalize.css": "^8.0.1",
+    "react": "^19.0.0",
+    "react-avatar-generator": "^1.0.3",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.3",
+    "react-turnstile": "^1.1.4",
+    "swiper": "^11.2.4",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "sass": "^1.84.0",
+    "typescript": "^5"
+  }
+}

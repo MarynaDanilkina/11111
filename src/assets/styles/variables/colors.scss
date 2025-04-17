@@ -1,0 +1,69 @@
+// bg
+$bg-background: #01072b;
+$bg-blur: blur(24px); //for backdrop-filter
+$bg-overlay-color: #01072b80;
+$bg-overlay-blur: blur(40px); //for backdrop-filter
+$bg-note: #0C1036;
+$bg-disable: #FFFFFF1F;
+
+// text
+$text-primary-inv: #01072b;
+$text-primary: #fffffff5;
+$text-secondary: #ffffffcc;
+$text-tertiary: #ffffff8a;
+$text-placeholder: #ffffffa3;
+$text-link: #ddc1ff;
+$text-base-first: #A3A6B7;
+$text-green: #B1DE74;
+$text-subtitle: #9CA3AF;
+$text-disable: #FFFFFF66;
+
+// icons
+$icons-primary-inv: #01072b;
+$icons-primary: #ffffff8a;
+$icons-primary-2: #fffffff5;
+$icons-placeholder: #ffffff7a;
+$icons-active: #b1de74;
+
+// buttons
+$buttons-primary-default: #f5f378;
+$buttons-primary-hover: #f8f7a5;
+$buttons-primary-clicked: #f2f059;
+$buttons-primary-disabled: #f5f37866;
+
+$buttons-secondary-default: #ddc1ff;
+$buttons-secondary-hover: #e9d9fd;
+$buttons-secondary-clicked: #c497fb;
+$buttons-secondary-disabled: #ddc1ff66;
+
+$buttons-tertiary-default: #b1de74;
+$buttons-tertiary-hover: #c5e798;
+$buttons-tertiary-clicked: #a5d95e;
+$buttons-tertiary-disabled: #b1de7466;
+
+$buttons-outline-default: #ddc1ff;
+$buttons-outline-hover: #e9d9fd;
+$buttons-outline-clicked: #c497fb;
+$buttons-outline-disabled: #ddc1ff66;
+
+$buttons-outline-2-default: #fffffff5;
+$buttons-outline-2-hover: #fffffff0;
+$buttons-outline-2-clicked: #ffffff;
+$buttons-outline-2-disabled: #fffffff5;
+
+//inputs
+$inputs-default: #ffffff38;
+$inputs-hover: #ffffffb2;
+$inputs-focused: #f2f059;
+$inputs-disabled: #ffffff29;
+
+//extra
+$extra-error: #ec704b;
+$extra-success: #b1de74;
+$extra-border: #ffffff38;
+$extra-fiol: #ddc1ff;
+$extra-bunner2: #ec704b;
+
+//border
+$border-divider: #374151;
+$border-disable: #FFFFFF38;

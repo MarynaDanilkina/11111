@@ -1,0 +1,5 @@
+.root {
+  @include media-max($md) {
+    text-align: center;
+  }
+}

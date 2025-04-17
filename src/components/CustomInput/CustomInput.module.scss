@@ -1,0 +1,130 @@
+.root {
+  position: relative;
+
+  width: fit-content;
+
+  & .nameMoney {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    transform: translateY(-50%);
+
+    &.nameMoneyError {
+      color: $extra-error;
+    }
+  }
+}
+
+.errorText {
+  position: absolute;
+  top: 100%;
+
+  color: $extra-error;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.input {
+  height: 44px;
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid $inputs-default;
+  border-radius: 12px;
+
+  background: none;
+
+  line-height: 24px;
+
+  color: $text-primary;
+
+  outline: none;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $text-placeholder;
+  }
+
+  &:hover {
+    border-color: $inputs-hover;
+  }
+
+  &:focus {
+    border-color: $inputs-focused;
+
+    caret-color: $text-primary;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &:disabled {
+    border-color: $inputs-disabled;
+  }
+
+  &.error {
+    border-color: $extra-error;
+
+    color: $extra-error;
+  }
+
+  &.search {
+    padding: 10px 10px 10px 38px;
+
+    border-radius: 100px;
+
+    @include media-max($md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &::placeholder {
+      @include media-max($md) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &.valueMoney {
+    padding: 10px 59px 10px 16px;
+
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &:-webkit-autofill {
+    border-color: $inputs-default;
+
+    -webkit-text-fill-color: $text-primary;
+    -webkit-box-shadow: 0 0 0 40rem $bg-background inset;
+    transition: background-color 5000s ease-in-out 0s;
+
+    &:hover {
+      border-color: $inputs-hover;
+    }
+    
+    &:focus {
+      border-color: $inputs-focused;
+      caret-color: $text-primary;
+    }
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}

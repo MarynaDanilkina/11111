@@ -1,0 +1,140 @@
+.root {
+  max-width: 1176px;
+  width: 100%;
+
+  @include media-max(1176px - 0.2) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.wrapper {
+  max-width: 680px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  flex: 1;
+
+  @include media-max($md) {
+    gap: 48px;
+  }
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  @include media-max($md) {
+    gap: 24px;
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include media-max($md) {
+    gap: 24px;
+  }
+}
+
+.subBlock {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include media-max($md) {
+    gap: 12px;
+  }
+}
+
+.subContent {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  gap: 10px;
+}
+
+.sellerLimits {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapperCommonInfo {
+  padding: 32px 0;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  border-top: 1px solid $border-divider;
+  border-bottom: 1px solid $border-divider;
+
+  @include media-max($md) {
+    padding: 16px 0;
+
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.wrapperCommonInfoItem {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.whiteColor {
+  color: #ffffff !important;
+}
+
+.greenColor {
+  color: $text-green !important;
+}
+
+.subtitle {
+  color: $text-subtitle !important;
+}
+
+.primaryColor {
+
+  color: $text-primary !important;
+
+  @include media-max($md) {
+    min-width: 23px;
+  }
+}
+
+.grayColor {
+  color: $text-base-first !important; 
+}

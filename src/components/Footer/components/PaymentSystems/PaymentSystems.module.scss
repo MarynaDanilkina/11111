@@ -1,0 +1,109 @@
+.root {
+  @include media-max($md) {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    padding-top: 60px;
+
+    border-top: 1px solid #303655; //Заменить цвет на константы
+  }
+}
+
+.title {
+  display: none;
+
+  @include media-max($md) {
+    display: block;
+
+    text-align: center;
+  }
+}
+
+.wrapper {
+  grid-area: payment;
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 39px;
+  row-gap: 28px;
+
+  max-width: 367px;
+  width: 100%;
+
+  @include media-max($md) {
+    justify-content: center;
+  }
+}
+
+.iOMoneyIcon {
+  width: 56px;
+  height: 40px;
+
+  @include media-max($md) {
+    width: 32px;
+    height: 30px;
+  }
+}
+
+.qIWIIcon {
+  width: 40px;
+  height: 40px;
+
+  @include media-max($md) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.sPBIcon {
+  width: 80px;
+  height: 40px;
+
+  @include media-max($md) {
+    width: 60px;
+    height: 30px;
+  }
+}
+
+.masterCardIcon {
+  width: 50px;
+  height: 30px;
+
+  @include media-max($md) {
+    width: 50px;
+    height: 30px;
+  }
+}
+
+.belCardIcon {
+  width: 34px;
+  height: 36px;
+
+  @include media-max($md) {
+    width: 34px;
+    height: 36px;
+  }
+}
+
+.bitcoinIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.visaIcon {
+  width: 59px;
+  height: 18px;
+
+  @include media-max($md) {
+    width: 59px;
+    height: 18px;
+  }
+}
+
+.mirIcon {
+  width: 63px;
+  height: 18px;
+}

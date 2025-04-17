@@ -1,0 +1,81 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  TAG_COMMIT: $CI_REGISTRY_IMAGE/frontendreact/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHORT_SHA
+  TAG_LATEST: $CI_REGISTRY_IMAGE/frontendreact/$CI_COMMIT_REF_SLUG:latest
+  CD_DEPLOY: /home/deploy/nixbuy/frontendreact
+  DOCKER_HOST: "tcp://docker:2375"
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: "overlay2"
+
+build-dev:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  only:
+    - develop
+  before_script:
+    - echo "${CI_JOB_TOKEN}" | docker login -u ${CI_REGISTRY_USER} --password-stdin "${CI_REGISTRY}"
+  script:
+    - cat $ENV_DEV > .env
+    - rm -rf .next
+    - docker build --pull -t $TAG_LATEST -f Dockerfile .
+    - docker push $TAG_LATEST
+
+build-prod:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  only:
+    - main
+  before_script:
+    - echo "${CI_JOB_TOKEN}" | docker login -u ${CI_REGISTRY_USER} --password-stdin "${CI_REGISTRY}"
+  script:
+    - cat $ENV_PROD > .env
+    - rm -rf .next
+    - docker build --pull -t $TAG_LATEST -f Dockerfile .
+    - docker push $TAG_LATEST
+
+deploy-dev:
+  stage: deploy
+  only:
+    - develop
+  environment:
+    name: develop
+    url: $DEV_SERVER_URI
+  script:
+    - chmod 600 $DEV_SSH_KEY
+    - apk update && apk add --no-cache openssh-client
+    - cat $ENV_DEV > .env
+    - ssh -i $DEV_SSH_KEY -o StrictHostKeyChecking=no $DEV_SSH_USER@$DEV_SSH_SERVER mkdir -p $CD_DEPLOY
+    - scp -i $DEV_SSH_KEY -o StrictHostKeyChecking=no .env docker-compose.develop.yml $DEV_SSH_USER@$DEV_SSH_SERVER:$CD_DEPLOY
+    - ssh -i $DEV_SSH_KEY -o StrictHostKeyChecking=no $DEV_SSH_USER@$DEV_SSH_SERVER "cd $CD_DEPLOY &&
+        echo '${CI_JOB_TOKEN}' | docker login -u ${CI_REGISTRY_USER} --password-stdin '${CI_REGISTRY}' &&
+        docker compose -f docker-compose.develop.yml pull &&
+        docker compose -f docker-compose.develop.yml up -d &&
+        docker system prune -f"
+
+deploy-prod:
+  stage: deploy
+  tags:
+    - docker
+  only:
+    - main
+  environment:
+    name: production
+    url: $PROD_SERVER_URI
+  script:
+    - chmod 400 $PROD_SSH_KEY
+    - apk update && apk add --no-cache openssh-client
+    - cat $ENV_PROD > .env
+    - ssh -i $PROD_SSH_KEY -o StrictHostKeyChecking=no $PROD_SSH_USER@$PROD_SSH_SERVER mkdir -p $CD_DEPLOY
+    - scp -i $PROD_SSH_KEY -o StrictHostKeyChecking=no .env docker-compose.prod.yml $PROD_SSH_USER@$PROD_SSH_SERVER:$CD_DEPLOY
+    - ssh -i $PROD_SSH_KEY -o StrictHostKeyChecking=no $PROD_SSH_USER@$PROD_SSH_SERVER "cd $CD_DEPLOY &&
+        echo '${CI_JOB_TOKEN}' | docker login -u ${CI_REGISTRY_USER} --password-stdin '${CI_REGISTRY}' &&
+        TAG_LATEST=$TAG_LATEST docker compose -f docker-compose.prod.yml pull &&
+        TAG_LATEST=$TAG_LATEST docker compose -f docker-compose.prod.yml up -d &&
+        docker system prune -f"

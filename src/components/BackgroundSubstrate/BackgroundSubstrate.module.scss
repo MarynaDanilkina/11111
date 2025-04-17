@@ -1,0 +1,24 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: $bg-overlay-color;
+  backdrop-filter: $bg-overlay-blur;
+
+  z-index: 999;
+
+  @include media-max($md) {
+    top: auto;
+
+    height: 90%;
+
+    backdrop-filter: 0;
+  }
+}

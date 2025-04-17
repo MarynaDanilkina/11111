@@ -1,0 +1,14 @@
+.root {
+  & .logInBtn {
+    height: 100%;
+  }
+}
+
+.closeIcon {
+  width: 24px;
+  height: 24px;
+
+  & path {
+    fill: $icons-primary-2;
+  }
+}

@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+
+  width: 100%;
+
+  padding: 4px;
+
+  border-radius: 45px;
+  border: 1px solid $extra-border;
+
+  & .btn {
+    justify-content: center;
+
+    max-width: 176px;
+    width: 100%;
+    height: 36px;
+
+    background: none;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $text-primary;
+
+    @include media-max($md) {
+      max-width: none;
+    }
+
+    &.activeBtn {
+      background: $buttons-outline-2-default;
+
+      font-weight: 500;
+
+      color: $text-primary-inv;
+    }
+  }
+}

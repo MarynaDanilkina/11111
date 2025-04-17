@@ -1,0 +1,54 @@
+.root {
+  margin: 0;
+
+  font-family: $exo2;
+  font-weight: 700;
+
+  color: $text-primary-inv;
+
+  &.h1 {
+    font-size: 40px;
+    line-height: 40px;
+
+    @include media-max($md) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  &.h2 {
+    font-size: 32px;
+    line-height: 32px;
+
+    @include media-max($md) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  &.h3 {
+    font-size: 24px;
+    line-height: 28px;
+
+    @include media-max($md) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &.h4 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &.h1Bunner {
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 66px;
+
+    @include media-max($md) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+}
